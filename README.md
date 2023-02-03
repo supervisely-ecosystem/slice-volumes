@@ -18,7 +18,7 @@
 
 
 # Overview
-This application allows to slice volumes to 2d images by one of the axes: Axial, Coronal or Sagittal
+This application allows to slice volumes to 2d images by one of the axes: Axial, Coronal or Sagittal. You can make several slices in one app session.
 
 # How to run
 
@@ -26,7 +26,7 @@ This application allows to slice volumes to 2d images by one of the axes: Axial,
 
 2. Run the application from context menu of a project/dataset
 
-<img src="https://user-images.githubusercontent.com/61844772/216614263-0578c2bd-be79-45e0-8a0b-4b25f6ed2429.png">
+<img src="https://user-images.githubusercontent.com/115161827/216698530-974cf7ab-7744-4e3f-be70-bc73f0e78f27.png">
 
 3. Select volume
 
@@ -40,4 +40,4 @@ This application allows to slice volumes to 2d images by one of the axes: Axial,
 
 # Screenshot
 
-<img src="https://user-images.githubusercontent.com/61844772/216614255-78ad1962-ebc8-4b2c-be99-f2f68117d1cb.png">
+<img src="https://user-images.githubusercontent.com/115161827/216695319-a2a577fc-c9ce-4b61-808b-1526aa7e926e.png">
