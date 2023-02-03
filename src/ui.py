@@ -256,13 +256,19 @@ def config_is_valid(config):
     return True
 
 
+def get_max_frame_n(axis):
+    volume = g.volumes[g.selected_volume_idx]
+    return volume.meta["dimensionsIJK"][axis]
+
+
 @start_button.click
 def start():
     config = get_config()
     if not config_is_valid(config):
         return
+    axis = config["axis"]
     from_frame = config["from"]
-    to_frame = config["to"]
+    to_frame = min(get_max_frame_n(axis), config["to"])
     step = config["step"]
     with upload_progress(total=(to_frame - from_frame) // step + 1) as pbar:
         for _ in utils.slice_volume(config):
