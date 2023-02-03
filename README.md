@@ -26,7 +26,7 @@ This application allows to slice volumes to 2d images by one of the axes: Axial,
 
 2. Run the application from context menu of a project/dataset
 
-<img src="https://user-images.githubusercontent.com/115161827/216698530-974cf7ab-7744-4e3f-be70-bc73f0e78f27.png">
+<img src="https://user-images.githubusercontent.com/12828725/216708941-2196522c-3e1c-459a-90a6-1b267fc1b44e.png">
 
 3. Select volume
 
