@@ -8,7 +8,9 @@
     "dicom",
     "data operations",
     "annotation transformation",
-    "data transformation"
+    "data transformation",
+    "images", 
+    "modalities"
   ],
   "context_menu": {
     "context_category": "Transform",
