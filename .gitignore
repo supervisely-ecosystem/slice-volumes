@@ -1,0 +1,8 @@
+venv
+.venv
+*.pyc
+local.env
+supervisely
+*.nrrd
+*.dcm
+*.sh
