@@ -15,5 +15,8 @@
       "volumes_project", "volumes_dataset"
     ]
   },
+  "icon": "https://user-images.githubusercontent.com/115161827/216693191-194c9ee8-0f26-4630-ad9d-23c304aeba0e.png",
+  "icon_cover": true,
+  "poster": "https://user-images.githubusercontent.com/115161827/216693193-e888bc84-7e47-4e17-a4ad-fe4b9692ece3.jpg",
   "instance_version": "6.7.12"
 }
