@@ -133,7 +133,7 @@ def get_annotation(
     img_tags = sly.TagCollection()
     for vol_tag in volume_ann.tags:
         tag_meta = img_project_meta.tag_metas.get(vol_tag.meta.name)
-        img_tags.add(sly.Tag(meta=tag_meta, value=vol_tag.value))
+        img_tags = img_tags.add(sly.Tag(meta=tag_meta, value=vol_tag.value))
     img_ann = sly.Annotation(img_size=img_size, img_tags=img_tags)
 
     plane = get_plane(volume_ann, axis)
@@ -148,7 +148,7 @@ def get_annotation(
 
         label_tags = sly.TagCollection()
         for figure_tag in figure.parent_object.tags:
-            label_tags.add(
+            label_tags = label_tags.add(
                 sly.Tag(
                     meta=img_project_meta.tag_metas.get(figure_tag.meta.name),
                     value=figure_tag.value,
