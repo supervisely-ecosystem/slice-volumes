@@ -23,6 +23,7 @@ api: sly.Api = sly.Api.from_env()
 project_info = api.project.get_info_by_id(PROJECT_ID)
 project_meta_json = api.project.get_meta(PROJECT_ID)
 project_meta = sly.ProjectMeta.from_json(project_meta_json)
+key_id_map = sly.KeyIdMap()
 
 if DATASET_ID is not None:
     datasets = [api.dataset.get_info_by_id(DATASET_ID)]

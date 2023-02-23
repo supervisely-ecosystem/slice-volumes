@@ -18,6 +18,7 @@ from supervisely.app.widgets import (
 import supervisely as sly
 import src.globals as g
 import src.utils as utils
+import src.zxc as zxc
 
 
 def get_input_thumbnail():
@@ -271,7 +272,10 @@ def start():
     to_frame = min(get_max_frame_n(axis), config["to"])
     step = config["step"]
     with upload_progress(total=(to_frame - from_frame) // step + 1) as pbar:
-        for _ in utils.slice_volume(config):
+        print("total:", (to_frame - from_frame) // step + 1)
+        # for _ in utils.slice_volume(config):
+        #     pbar.update(1)
+        for _ in zxc.slice_volume(config):
             pbar.update(1)
 
 
