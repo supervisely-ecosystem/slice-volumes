@@ -1,4 +1,3 @@
-import json
 import os
 from pathlib import Path
 import nrrd
@@ -9,7 +8,7 @@ import src.globals as g
 
 
 def read_volume(volume):
-    filepath = volume.name
+    filepath = g.STORAGE_DIR + volume.name
     if not Path(filepath).exists():
         g.api.volume.download_path(volume.id, filepath)
 
@@ -115,9 +114,14 @@ def transpose_geometry(geometry: sly.AnyGeometry) -> sly.AnyGeometry:
         origin = sly.PointLocation(row=geometry.origin.col, col=geometry.origin.row)
         geometry = sly.Bitmap(data, origin)
     elif type(geometry) is sly.Rectangle:
-        pass
+        geometry = sly.Rectangle(
+            geometry.left, geometry.top, geometry.right, geometry.bottom
+        )
     elif type(geometry) is sly.Polygon:
-        pass
+        exterior = [sly.PointLocation(p.col, p.row) for p in geometry.exterior]
+        interior = [sly.PointLocation(p.col, p.row) for p in geometry.interior]
+        geometry = sly.Polygon(exterior, interior)
+
     return geometry
 
 
