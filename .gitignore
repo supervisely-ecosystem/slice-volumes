@@ -6,3 +6,4 @@ supervisely
 *.nrrd
 *.dcm
 *.sh
+debug

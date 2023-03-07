@@ -17,6 +17,7 @@ PROJECT_ID = sly.env.project_id()
 DATASET_ID = sly.env.dataset_id(raise_not_found=False)
 STORAGE_DIR = sly.app.get_data_dir()
 sly.fs.clean_dir(STORAGE_DIR)
+key_id_map = None
 
 api: sly.Api = sly.Api.from_env()
 
