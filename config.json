@@ -3,7 +3,7 @@
     "description": "Slice volumes to 2d images",
     "version": "2.0.0",
     "headless": false,
-    "docker_image": "supervisely/data-operations:0.0.1",
+    "docker_image": "supervisely/data-operations:0.0.3",
     "entrypoint": "python -m uvicorn src.main:app --host 0.0.0.0 --port 8000",
     "categories": [
         "dicom",
