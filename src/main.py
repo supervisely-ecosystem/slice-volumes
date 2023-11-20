@@ -4,4 +4,5 @@ import src.globals as g
 
 
 app = SlyApp(layout=ui.layout)
-ui.select_volume(g.volumes[0])
+ui.volume_selector.set_value(g.volumes[0])
+ui.select_volume()
