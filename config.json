@@ -1,5 +1,5 @@
 {
-  "name": "Slice volume",
+  "name": "Slice volumes",
   "description": "Slice volumes to 2d images",
   "version": "2.0.0",
   "headless": false,
