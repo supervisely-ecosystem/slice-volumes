@@ -1,6 +1,6 @@
 {
   "name": "Slice volumes",
-  "description": "Slice volumes to 2d images",
+  "description": "Slice volumes to 2D images",
   "version": "2.0.0",
   "headless": false,
   "docker_image": "supervisely/data-operations:6.72.195",
