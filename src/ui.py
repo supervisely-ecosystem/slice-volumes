@@ -276,3 +276,6 @@ def start():
 
 
 layout = Container(widgets=[input_card, config_cards, start_button, upload_progress])
+
+volume_selector._changes_handled = True
+volume_selector.update_state()
