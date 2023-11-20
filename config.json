@@ -1,27 +1,24 @@
 {
-    "name": "Slice volume",
-    "description": "Slice volumes to 2d images",
-    "version": "2.0.0",
-    "headless": false,
-    "docker_image": "supervisely/data-operations:0.0.5",
-    "entrypoint": "python -m uvicorn src.main:app --host 0.0.0.0 --port 8000",
-    "categories": [
-        "dicom",
-        "data operations",
-        "annotation transformation",
-        "data transformation",
-        "images",
-        "modalities"
-    ],
-    "context_menu": {
-        "context_category": "Transform",
-        "target": [
-            "volumes_project",
-            "volumes_dataset"
-        ]
-    },
-    "icon": "https://user-images.githubusercontent.com/115161827/216693191-194c9ee8-0f26-4630-ad9d-23c304aeba0e.png",
-    "icon_cover": true,
-    "poster": "https://user-images.githubusercontent.com/115161827/216693193-e888bc84-7e47-4e17-a4ad-fe4b9692ece3.jpg",
-    "instance_version": "6.7.12"
+  "name": "Slice volume",
+  "description": "Slice volumes to 2d images",
+  "version": "2.0.0",
+  "headless": false,
+  "docker_image": "supervisely/data-operations:6.72.195",
+  "entrypoint": "python -m uvicorn src.main:app --host 0.0.0.0 --port 8000",
+  "categories": [
+    "dicom",
+    "data operations",
+    "annotation transformation",
+    "data transformation",
+    "images",
+    "modalities"
+  ],
+  "context_menu": {
+    "context_category": "Transform",
+    "target": ["volumes_project", "volumes_dataset"]
+  },
+  "icon": "https://user-images.githubusercontent.com/115161827/216693191-194c9ee8-0f26-4630-ad9d-23c304aeba0e.png",
+  "icon_cover": true,
+  "poster": "https://user-images.githubusercontent.com/115161827/216693193-e888bc84-7e47-4e17-a4ad-fe4b9692ece3.jpg",
+  "instance_version": "6.7.12"
 }
