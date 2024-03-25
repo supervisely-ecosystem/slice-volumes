@@ -45,6 +45,7 @@ volume_info_name = Text('<p style="text-align:left">Name:</p>')
 volume_info_axial_frames = Text('<p style="text-align:left">Axial frames:</p>')
 volume_info_coronal_frames = Text('<p style="text-align:left">Coronal frames:</p>')
 volume_info_sagittal_frames = Text('<p style="text-align:left">Sagittal frames:</p>')
+result_text = Text()
 volume_info = Container(
     widgets=[
         volume_info_id,
@@ -56,8 +57,6 @@ volume_info = Container(
     gap=0,
 )
 
-
-@volume_selector.value_changed
 def select_volume(val):
     def html_wrap_text_align(text, align="right"):
         return f'<p style="text-align:right">{text}</p>'
@@ -68,6 +67,8 @@ def select_volume(val):
     idx = int(val)
     g.selected_volume_idx = idx
     volume = g.volumes[idx]
+
+    result_text.set("", status="text")
     volume_info_id.set(
         html_wrap_div_space_between(
             html_wrap_text_align("Id:") + html_wrap_text_align(volume.id)
@@ -101,6 +102,13 @@ def select_volume(val):
         ),
         status="text",
     )
+
+if len(volume_selector_items) > 0:
+    select_volume(0)
+
+@volume_selector.value_changed
+def handle_select_volume(val):
+    select_volume(val)
 
 
 volume_input_card = Card(
@@ -263,8 +271,10 @@ def get_max_frame_n(axis):
 
 @start_button.click
 def start():
+    result_text.set("Slicing in progress...", status="text")
     config = get_config()
     if not config_is_valid(config):
+        result_text.set("Invalid slice config. Please update settings and try again", status="error")
         return
     axis = config["axis"]
     from_frame = config["from"]
@@ -273,6 +283,7 @@ def start():
     with upload_progress(total=(to_frame - from_frame) // step + 1) as pbar:
         for _ in utils.slice_volume(config):
             pbar.update(1)
+    result_text.set("Slicing completed successfully", status="success")
 
 
-layout = Container(widgets=[input_card, config_cards, start_button, upload_progress])
+layout = Container(widgets=[input_card, config_cards, start_button, result_text, upload_progress])

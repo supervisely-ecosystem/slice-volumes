@@ -3,4 +3,3 @@ import src.ui as ui
 
 
 app = SlyApp(layout=ui.layout)
-ui.select_volume()
